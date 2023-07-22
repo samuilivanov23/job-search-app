@@ -38,4 +38,4 @@ const Company = ({ companyLogo, jobTitle, companyName, location }) => {
   )
 }
 
-export default Company
+export default Company;

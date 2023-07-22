@@ -22,7 +22,11 @@ const JobDetails = () => {
     const [refreshing, setRefreshing] = useState(false);
     const [activeTab, setActiveTab] = useState(tabs[0]);
 
-    const onRefresh = () => {};
+    const onRefresh = useCallback(() => {
+        setRefreshing(true);
+        refetchData();
+        setRefreshing(false);
+    }, []);
 
     const displayTabContent = () => {
         switch (activeTab) {
@@ -94,10 +98,13 @@ const JobDetails = () => {
 
                             {displayTabContent()}
                         </View>
-                    )
-
-                    }
+                    )}
                 </ScrollView>
+
+                {/* Always display at the bottom because it is out of the ScrollView component */}
+                <JobFooter 
+                    url={data[0]?.job_google_link ?? "https://careers.google.com/jobs/results"}
+                />
             </>
         </SafeAreaView>
     )

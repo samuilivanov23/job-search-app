@@ -15,4 +15,4 @@ const About = ({ info }) => {
   )
 }
 
-export default About
+export default About;

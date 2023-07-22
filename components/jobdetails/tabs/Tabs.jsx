@@ -34,4 +34,4 @@ const Tabs = ({ tabs, activeTab, setActiveTab }) => {
   )
 }
 
-export default Tabs
+export default Tabs;
